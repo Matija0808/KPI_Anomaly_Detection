@@ -1,20 +1,30 @@
 # KPI Anomaly Detection (Time-Series Sliding Window)
 
 This project implements anomaly detection on multivariate KPI time-series data using:
-
-Sliding window feature extraction
-
-Horizon-based labeling
-
-Machine learning models (Logistic Regression / Random Forest)
-
-Precision-controlled threshold selection
-
-The goal is to detect anomalies while minimizing false positives.
+- Sliding window feature extraction
+- Horizon-based labeling
+- Machine learning models (Logistic Regression / Random Forest)
+- Precision-controlled threshold selection
+- The goal is to detect anomalies while minimizing false positives.
+  
 ## What this repo does
 For each KPI series, we create windows of length `W` from past values and label each window as **1** if there is **any anomaly in the next `H` timestamps**.
 
 Then we train a baseline model (Logistic Regression or Random Forest), pick a probability threshold to achieve a minimum precision, and evaluate.
+
+## Dataset
+This project uses the KPI Anomaly Detection dataset from:
+- https://github.com/NetManAIOps/KPI-Anomaly-Detection
+
+### Download:
+Preliminary_dataset/train.csv
+Preliminary_dataset/test.csv
+
+### Place the files into:
+data/raw/train.csv
+data/raw/test.csv
+
+The dataset is not included in this repository due to size constraints.
 
 ## Quickstart
 
@@ -56,3 +66,4 @@ python scripts/train.py --train_csv data/raw/train.csv --kpi_id <YOUR_KPI_ID>
 ## Notes
 - **Do not mix windows across different KPI IDs.** Always split per KPI, then window.
 - Threshold tuning is done on a validation slice (last 20% of training windows).
+
