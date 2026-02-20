@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# Data (do not commit full datasets)
+data/raw/
+data/processed/
+*.csv
+*.hdf
+*.h5
+
+# Outputs
+*.png
+*.pdf
+*.log
+
+# IDE
+.idea/
+.vscode/
