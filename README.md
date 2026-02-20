@@ -1,10 +1,16 @@
 # KPI Anomaly Detection (Time-Series Sliding Window)
 
-Small, internship-friendly project layout for KPI anomaly detection using:
-- **Per-KPI time-series split** (no mixing different KPIs)
-- **Sliding windows** (past window length `W`, future horizon `H`)
-- **Sklearn classifier** + **threshold selection** to target a minimum precision
+This project implements anomaly detection on multivariate KPI time-series data using:
 
+Sliding window feature extraction
+
+Horizon-based labeling
+
+Machine learning models (Logistic Regression / Random Forest)
+
+Precision-controlled threshold selection
+
+The goal is to detect anomalies while minimizing false positives.
 ## What this repo does
 For each KPI series, we create windows of length `W` from past values and label each window as **1** if there is **any anomaly in the next `H` timestamps**.
 
